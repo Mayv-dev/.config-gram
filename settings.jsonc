@@ -1,0 +1,77 @@
+// Gram settings
+//
+// For information on how to configure Gram, see the Gram
+// documentation: gram://docs/configuring-gram
+//
+// To see all of Gram's default settings without changing your
+// custom settings, run `gram: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "node": {
+    "allow_binary_download": true,
+  },
+  "lsp": {
+    "zls": {
+      "binary": {
+        "enable_auto_updates": false,
+        "ignore_system_version": false,
+        "allow_binary_download": false,
+      },
+      "enable_lsp_tasks": true,
+    },
+  },
+  "buffer_line_height": "standard",
+  "outline_panel": {
+    "dock": "right",
+  },
+  "git_panel": {
+    "dock": "right",
+  },
+  "project_panel": {
+    "dock": "right",
+  },
+  "icon_theme": {
+    "mode": "system",
+    "light": "Gram (Default)",
+    "dark": "Gram (Default)",
+  },
+  "vim_mode": true,
+  "base_keymap": "VSCode",
+  "relative_line_numbers": "enabled",
+  "vertical_scroll_margin": 10.0,
+  "gutter": {
+    "line_numbers": true,
+  },
+  "autosave": {
+    "after_delay": {
+      "milliseconds": 1000,
+    },
+  },
+  "buffer_font_family": "JetBrains Mono",
+  "show_whitespaces": "boundary",
+  "wrap_guides": [80, 120],
+  "hard_tabs": false,
+  "tab_size": 2,
+  "ui_font_size": 16.0,
+  "buffer_font_size": 16.0,
+  "theme": {
+    "mode": "system",
+    "light": "Rosé Pine Dawn",
+    "dark": "Tokyo Night",
+  },
+  "use_system_path_prompts": false,
+  "terminal": {
+    "font": "JetBrainsMono-Regular",
+    "dock": "bottom",
+    "font_size": 16.0,
+    "shell": {
+      "with_arguments": {
+        "program": "/bin/zsh",
+        "args": [
+          "-c",
+          "tmux new-session -A -s \"$(basename \"$(git rev-parse --show-toplevel 2>/dev/null || pwd)\")\"",
+        ],
+      },
+    },
+  },
+}
