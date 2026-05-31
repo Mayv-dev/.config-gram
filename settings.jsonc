@@ -7,15 +7,76 @@
 // custom settings, run `gram: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "git": {
+    "inline_blame": {
+      "show_commit_summary": false,
+      "min_column": 80,
+      "padding": 10,
+      "delay_ms": 500,
+      "enabled": true
+    }
+  },
+  "preview_tabs": {
+    "enable_preview_file_from_code_navigation": true,
+    "enabled": true,
+  },
+  "tabs": {
+    "show_close_button": "hover",
+    "file_icons": true,
+    "git_status": true,
+  },
+  "tab_bar": {
+    "show_nav_history_buttons": false,
+    "show_tab_bar_buttons": true,
+    "show": false,
+  },
+  "title_bar": {
+    "show_menus": false,
+    "show_onboarding_banner": true,
+    "show_project_items": true,
+    "show_branch_icon": true,
+  },
+  "status_bar": {
+    "cursor_position_button": true,
+    "active_language_button": true,
+    "active_file": true,
+    "show": true,
+  },
+  "colorize_brackets": true,
+  "indent_guides": {
+    "background_coloring": "disabled",
+    "line_width": 2,
+    "active_line_width": 3,
+    "coloring": "indent_aware",
+  },
+  "toolbar": {
+    "code_actions": true,
+    "selections_menu": true,
+    "quick_actions": true,
+    "breadcrumbs": true,
+  },
+  "minimap": {
+    "show": "never",
+    "thumb": "always",
+  },
+  "languages": {
+    "Zig": {
+      "tab_size": 4,
+    },
+  },
   "node": {
-    "allow_binary_download": true,
+    "allow_binary_download": false,
   },
   "lsp": {
+    "json-language-server": {
+      "binary": {
+        "allow_binary_download": false,
+      },
+      "enable_lsp_tasks": true,
+    },
     "zls": {
       "binary": {
-        "enable_auto_updates": false,
-        "ignore_system_version": false,
-        "allow_binary_download": false,
+        "path": "~/.local/share/mise/installs/zls/0.16.0/zls",
       },
       "enable_lsp_tasks": true,
     },
@@ -28,6 +89,7 @@
     "dock": "right",
   },
   "project_panel": {
+    "button": true,
     "dock": "right",
   },
   "icon_theme": {
@@ -57,7 +119,7 @@
   "theme": {
     "mode": "system",
     "light": "Rosé Pine Dawn",
-    "dark": "Tokyo Night",
+    "dark": "Rosé Pine Moon",
   },
   "use_system_path_prompts": false,
   "terminal": {
@@ -69,7 +131,7 @@
         "program": "/bin/zsh",
         "args": [
           "-c",
-          "tmux new-session -A -s \"$(basename \"$(git rev-parse --show-toplevel 2>/dev/null || pwd)\")\"",
+          "tmux new-session -A -s \"$(basename \"$(git rev-parse --show-toplevel 2>/dev/null || pwd)\")\" -c \"$(pwd)\"",
         ],
       },
     },
